@@ -1,0 +1,27 @@
+resources:
+  - ../../apps/namespace.yaml
+
+  - ../../apps/postgres/secret.yaml
+  - ../../apps/postgres/pvc.yaml
+  - ../../apps/postgres/deployment.yaml
+  - ../../apps/postgres/service.yaml
+
+  - ../../apps/backend/deployment.yaml
+  - ../../apps/backend/service.yaml
+
+  - ../../apps/frontend/deployment.yaml
+  - ../../apps/frontend/service.yaml
+
+  - ../../apps/ingress/app-ingress.yaml
+
+  - ../../apps/cloudflare/namespace.yaml
+  - ../../apps/cloudflare/cloudflared.yaml
+
+
+# 
+images:
+  - name: ghcr.io/pasokatazip/frontend
+    newTag: develop
+
+  - name: ghcr.io/pasokatazip/backend
+    newTag: develop

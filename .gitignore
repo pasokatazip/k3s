@@ -1,0 +1,25 @@
+# Kubernetes secrets / local sensitive files
+*.secret.yaml
+*.secrets.yaml
+secret.yaml
+secrets.yaml
+
+# kubeconfig
+kubeconfig
+kubeconfig.yaml
+*.kubeconfig
+
+# env
+.env
+.env.local
+
+# generated / temporary files
+*.bak
+*.tmp
+
+# OS
+.DS_Store
+
+# editor
+.vscode/
+.idea/
