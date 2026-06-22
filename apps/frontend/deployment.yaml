@@ -21,7 +21,7 @@ spec:
 
       containers:
         - name: frontend
-          image: ghcr.io/pasokatazip/frontend:ea7381b4492e39dbc8ab2042d43ce1a54c117f50
+          image: ghcr.io/pasokatazip/frontend:b14e91cabd62b36fa183687b12faef4eb5bd3135
 
           ports:
             - containerPort: 3000
