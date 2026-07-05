@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: backend-migrate
+  namespace: app
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrate
+          image: ghcr.io/pasokatazip/backend:ここは今のbackendタグ
+          command:
+            - goose
+            - -dir
+            - migrations
+            - postgres
+            - "$(DATABASE_URL)"
+            - up
+          envFrom:
+            - secretRef:
+                name: backend-secret
