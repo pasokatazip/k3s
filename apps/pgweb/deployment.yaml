@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgweb
+  namespace: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgweb
+  template:
+    metadata:
+      labels:
+        app: pgweb
+    spec:
+      containers:
+        - name: pgweb
+          image: sosedoff/pgweb:latest
+          ports:
+            - containerPort: 8081
+          envFrom:
+            - secretRef:
+                name: backend-secret
+          args:
+            - --bind=0.0.0.0
+            - --listen=8081
