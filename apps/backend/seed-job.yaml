@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: backend-seed
+  namespace: app
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded,HookFailed
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: seed
+          image: ghcr.io/pasokatazip/backend:fe0ffd7f04c2f59a52d17f2137d9b2e6fdde42fc
+          command:
+            - sh
+            - -c
+            - |
+              for f in seeds/common/*.sql; do
+                echo "Applying $f"
+                psql "$DATABASE_URL" -f "$f"
+              done
+          envFrom:
+            - secretRef:
+                name: backend-secret
