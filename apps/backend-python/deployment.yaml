@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-python-worker
+  namespace: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-python-worker
+  template:
+    metadata:
+      labels:
+        app: backend-python-worker
+    spec:
+      containers:
+        - name: worker
+          image: ghcr.io/pasokatazip/backend-python:fd2c0ca7035f6028cb0b7299f1c2e2c86629a77b
+          envFrom:
+            - secretRef:
+                name: backend-secret
+          env:
+            - name: HF_HOME
+              value: /cache/huggingface
+          volumeMounts:
+            - name: model-cache
+              mountPath: /cache/huggingface
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "250m"
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+      volumes:
+        - name: model-cache
+          persistentVolumeClaim:
+            claimName: hf-model-cache
