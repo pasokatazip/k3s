@@ -12,7 +12,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: seed
-          image: ghcr.io/pasokatazip/backend:fd2c0ca7035f6028cb0b7299f1c2e2c86629a77b
+          image: ghcr.io/pasokatazip/backend:cf9df69a0a9af8b918529cbc0f25fd310c6d2a91
           command:
             - sh
             - -c
