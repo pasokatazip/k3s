@@ -12,7 +12,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: migrate
-          image: ghcr.io/pasokatazip/backend:50b504684f87a677ef7fe2b53ccc2edb04c3943a
+          image: ghcr.io/pasokatazip/backend:291cdad9f9fab296c6deabea0e04d399c2373db3
           command:
             - goose
             - -dir
