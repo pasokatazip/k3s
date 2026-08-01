@@ -16,8 +16,6 @@ spec:
         app: frontend
 
     spec:
-      #imagePullSecrets:
-        #- name: ghcr-secret
 
       containers:
         - name: frontend
@@ -26,6 +24,6 @@ spec:
           ports:
             - containerPort: 3000
 
-          env:
-            - name: NEXT_PUBLIC_API_BASE_URL
-              value: "https://api.akatukii.com"
+          envFrom:
+            - configMapRef:
+                name: frontend-config
