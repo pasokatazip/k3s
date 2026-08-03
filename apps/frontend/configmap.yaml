@@ -4,7 +4,7 @@ metadata:
   name: frontend-config
   namespace: app
 data:
-  NEXT_PUBLIC_PETYOYO_API_URL: "https://api.akatukii.com"
-  NEXT_PUBLIC_PETYOYO_IMAGE_URL: "https://assets.akatukii.com"
-  NEXT_PUBLIC_PETYOYO_IMAGE_VERSION: "20260720-1"
-  NEXT_PUBLIC_VAPID_PUBLIC_KEY: "BJsGEKT297dlAOFuLRHQR48P7gUFa7QKkpEvCOKMY3FMYbh2v6wzLqEgfy5DeDJByJTfq_MA6L-zDktaTuNZf5E"
+  PETYOYO_API_URL: "https://api.akatukii.com"
+  PETYOYO_IMAGE_URL: "https://assets.akatukii.com"
+  PETYOYO_IMAGE_VERSION: "20260720-1"
+  VAPID_PUBLIC_KEY: "BJsGEKT297dlAOFuLRHQR48P7gUFa7QKkpEvCOKMY3FMYbh2v6wzLqEgfy5DeDJByJTfq_MA6L-zDktaTuNZf5E"
