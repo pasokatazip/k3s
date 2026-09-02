@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: ghcr.io/pasokatazip/backend-python:fd2c0ca7035f6028cb0b7299f1c2e2c86629a77b
+          image: ghcr.io/pasokatazip/backend-python:a18a8df243d5f6452d42403757b71fbdfbc0f1fe
           envFrom:
             - secretRef:
                 name: backend-secret
