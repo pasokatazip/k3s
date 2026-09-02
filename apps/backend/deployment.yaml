@@ -21,7 +21,7 @@ spec:
 
       containers:
         - name: backend
-          image: ghcr.io/pasokatazip/backend:cdf221d6154341ce465e0da2473969b5dca089ec
+          image: ghcr.io/pasokatazip/backend:2a1cf585b1c520510863ea000f3cfb29b0de8b7a
 
           ports:
             - containerPort: 8080
